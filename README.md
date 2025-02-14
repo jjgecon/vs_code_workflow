@@ -3,16 +3,16 @@ Javier Gonzalez - 2/13/2025
 
 # Why VS Code?
 
-- **Single program** for all your coding needs.
+- **Single program** for all your coding needs:
     - Run Julia, Python, and R scripts in one program.
-    - You can edit and run Jupyter notebooks.
+    - Edit and run Jupyter notebooks.
     - Connect to HPC resources or servers using remote access.
-    - You could use it to even render and edit your $\LaTeX$ in here.
+    - Use it to render and edit your LaTeX.
 - **Extensions** let you expand its functionality (debugging, languages, linting).
 - **GitHub Copilot**: Text generation chat bot without the need to open your browser!
     - It can even read your code and edit it inside the file.
-- **Customization**: how it looks and what tools you use to help you coding. 
-    - This [Youtube video](https://www.youtube.com/watch?v=9_I0bySQoCs) shows how to completely redesign the look of VS Code.
+- **Customization**: Customize its appearance and the tools you use for coding.
+    - This [YouTube video](https://www.youtube.com/watch?v=9_I0bySQoCs) shows how to completely redesign the look of VS Code.
 
     <table>
         <tr>
@@ -23,40 +23,49 @@ Javier Gonzalez - 2/13/2025
             <td align="center">
                 <img src="media/custom_vscode.png" alt="Customized">
                 <figcaption>Customized</figcaption>
-            </td>
-        </tr>
+            </tr>
     </table>
 
-# Download VS Code from scratch
+# Download VS Code
 
 ## Instructions for Windows
 1. Go to [Visual Studio Code Downloads](https://code.visualstudio.com/download).
-2. Select **Windows** download. 
-3. Follow the installer prompts. 
-4. Launch VS Code and customize according to your preferences.
+2. Select the **Windows** download.
+3. Follow the installer prompts.
+4. Launch VS Code and customize it to your preferences.
 
 ## Instructions for MacOS
 1. Go to [Visual Studio Code Downloads](https://code.visualstudio.com/download).
-2. Select **macOS** download.
+2. Select the **macOS** download.
 3. Drag and drop the app into your **Applications** folder.
 4. Open VS Code. Confirm that macOS security settings allow opening apps from outside the App Store.
 
-# Open the `template_folder`
+# Download the GitHub Repository
 
-There is two ways of opening a folder with VS Code.
+1. Go to [https://github.com/jjgecon/vs_code_workflow](https://github.com/jjgecon/vs_code_workflow).
+2. Select `Code` → `Download ZIP`.
+    <div align="center">
+        <img src="media/github_download.png" alt="Default" width="90%">
+    </div>
 
+    > Alternatively, you can clone the repository using the terminal or [GitHub Desktop](https://desktop.github.com/download/).
+3. Unzip the files to your desired location.
 
-1. Select the `Open Folder` option in the *Welcome* page and find the folder `template_folder` and press open.
+# Open the `template_folder` Folder
+
+There are two ways to open a folder with VS Code:
+
+1. Select the `Open Folder` option on the *Welcome* page and locate the `./vs_code_workflow-main/template_folder` folder, then press open.
 
 <div align="center">
     <img src="media/open_welcome.png" alt="Default" width="90%">
 </div>
 
-2. Go to the menu bar on top and select `File` → `Open Folder` and find the folder `template_folder`.
+2. Go to the menu bar at the top and select `File` → `Open Folder` and find the `template_folder` folder.
 
 # Layout Explanation
 
-This is the layout of the typical VS code on install:
+This is the default layout of VS Code upon installation:
 
 <div align="center">
     <img src="media/default_layput.png" alt="Default" width="90%">
@@ -64,21 +73,21 @@ This is the layout of the typical VS code on install:
 
 ## Side Panel
 The side panel in Visual Studio Code is typically located on the left side of the window. It contains several important views and tools that help you navigate and manage your project:
-- **Explorer**: Displays the files and folders in your workspace. You can open, create, delete, and manage files from here.
-- **Source Control**: Integrates with version control systems like Git. You can view changes, commit, push, pull, and manage branches.
+- **Explorer**: Displays the files and folders in your workspace. Open, create, delete, and manage files from here.
+- **Source Control**: Integrates with version control systems like Git. View changes, commit, push, pull, and manage branches.
 - **Search**: Allows you to search for text within your project files.
-- **Extensions**: Lets you browse and install extensions to add new features to VS Code.
+- **Extensions**: Browse and install extensions to add new features to VS Code.
 - **Debug**: Provides tools to run and debug your code.
 
 ## Terminal
-The integrated terminal in Visual Studio Code allows you to run command-line tasks directly within the editor. You can open the terminal by clicking the terminal icon or using the keyboard shortcut `Ctrl+` (Windows) or `Cmd+J` (Mac). The terminal supports multiple instances, so you can run different commands in separate terminals simultaneously.
+The integrated terminal in Visual Studio Code allows you to run command-line tasks directly within the editor. Open the terminal by clicking the terminal icon or using the keyboard shortcut `Ctrl+` (Windows) or `Cmd+J` (Mac). The terminal supports multiple instances, so you can run different commands in separate terminals simultaneously.
 
 ## Editor
-The text editor is the main area where you write and edit your code. It supports syntax highlighting, code completion, and other features to help you write code efficiently. You can open multiple files in tabs and split the editor to view and edit files side by side.
+The text editor is the main area where you write and edit your code. It supports syntax highlighting, code completion, and other features to help you write code efficiently. Open multiple files in tabs and split the editor to view and edit files side by side.
 
-## Command Palette 
+## Command Palette
 
-Press F1 or `Ctrl+Shift+P` (Windows) or `Cmd+Shift+P` (Mac) to quickly access commands and settings. [This post](https://docs.github.com/en/codespaces/reference/using-the-vs-code-command-palette-in-codespaces) explains some of the uses. 
+Press F1 or `Ctrl+Shift+P` (Windows) or `Cmd+Shift+P` (Mac) to quickly access commands and settings. [This post](https://docs.github.com/en/codespaces/reference/using-the-vs-code-command-palette-in-codespaces) explains some of its uses.
 
 You should see the following command bar:
 
@@ -88,9 +97,9 @@ You should see the following command bar:
 
 ## My Customizations
 
-- **Move Terminal to the left**: right click on the terminal and select the option `Panel Position` → `Right`.
+- **Move Terminal to the Right**: Right-click on the terminal and select the option `Panel Position` → `Right`.
 
-- **Move the Activity bar to the top of the side panel**: right click on the activity bar select the option `Activity Bar Position` → `Top`.
+- **Move the Activity Bar to the Top of the Side Panel**: Right-click on the activity bar and select the option `Activity Bar Position` → `Top`.
 
     <table>
         <tr>
@@ -101,13 +110,12 @@ You should see the following command bar:
             <td align="center">
                 <img src="media/move_act_bar.png" alt="Customized">
                 <figcaption>Activity Bar</figcaption>
-            </td>
-        </tr>
+            </tr>
     </table>
 
-- **Hide un-used panels**: when I'm not using the side panel or the terminal I like to hide them.
-    - right click the panel icon or press `Ctrl+B` (Windows) or `Cmd+B` (Mac) to hide or show the left side panel.
-    - right click the terminal icon or press `Ctrl+j` (Windows)or `Cmd+J` (Max) to hide or show the terminal panel.
+- **Hide Unused Panels**: When I'm not using the side panel or the terminal, I like to hide them.
+    - Right-click the panel icon or press `Ctrl+B` (Windows) or `Cmd+B` (Mac) to hide or show the left side panel.
+    - Right-click the terminal icon or press `Ctrl+J` (Windows) or `Cmd+J` (Mac) to hide or show the terminal panel.
 - **Enable Auto-save**:
     1. Open the Command Palette with `Ctrl+Shift+P` (Windows) or `Cmd+Shift+P` (Mac).
     2. Type `Preferences: Open Settings (UI)` and press Enter.
@@ -116,11 +124,11 @@ You should see the following command bar:
     5. Optionally, adjust the `Files: Auto Save Delay` to your preference (e.g., for every 5 minutes, set it to `300000` milliseconds).
 
 # Extensions
-A Visual Studio Code (VS Code) extension is a package that adds new features or functionality to the VS Code editor. Extensions can enhance your development experience by providing tools, themes, debuggers, and more.
+A Visual Studio Code (VS Code) extension is a package that adds new features or functionality to the VS Code editor. Extensions enhance your development experience by providing tools, themes, debuggers, and more.
 
-For more information on VS Code extensions, you can visit the [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/vscode).
+For more information on VS Code extensions, visit the [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/vscode).
 
-To acces the extension click on the 4 squares in the Activity Bar
+To access the extensions view, click on the four squares in the Activity Bar:
 
 <div align="center">
     <img src="media/extensions.png" alt="Default" width="90%">
@@ -129,7 +137,7 @@ To acces the extension click on the 4 squares in the Activity Bar
 ## Themes
 
 1. Search for “Themes” (e.g., “One Dark Pro”, “Solarized”).
-2. Install and select via the Command Palette → “Color Theme”.
+2. Install and select a theme via the Command Palette → “Color Theme”.
 
 My current VS Code setup:
 
@@ -137,53 +145,53 @@ My current VS Code setup:
     <img src="media/my_vscode.png" alt="Default" width="90%">
 </div>
 
-I'm currently using `GitHub Dark (Default)` from the [GitHub Theme](https://marketplace.visualstudio.com/items?itemName=GitHub.github-vscode-theme). I've also really liked [Matchalk](https://marketplace.visualstudio.com/items?itemName=lucafalasco.matchalk) green theme.
+I'm currently using `GitHub Dark (Default)` from the [GitHub Theme](https://marketplace.visualstudio.com/items?itemName=GitHub.github-vscode-theme). I also really like the [Matchalk](https://marketplace.visualstudio.com/items?itemName=lucafalasco.matchalk) green theme.
 
 # Let's Use VS Code
 
 ## Markdown
 
-Let's first start with using Markdown, which is a simple language to write text. (This was actually made with Markdown).
+Let's start with Markdown, a simple language for writing text. (This file was written in Markdown.)
 
-Open the file `my_explanation.md` using the file explorer. Alternatively, you can search for files with the keybind `Ctrl+P` (Windows) or `Cmd+P` (Mac).
+Open the file `my_explanation.md` using the file explorer. Alternatively, search for files with the keybind `Ctrl+P` (Windows) or `Cmd+P` (Mac).
 
-You can render what you write using the `Preview` button. Alternatively use the command palette (or `Ctrl+Shift+P` for Windows or `Cmd+Shift+P` Mac) and search for `Markdown: Open Preview to the Side`.
+Preview your Markdown by using the `Preview` button. Alternatively, use the command palette (`Ctrl+Shift+P` for Windows or `Cmd+Shift+P` Mac) and search for `Markdown: Open Preview to the Side`.
 
 <div align="center">
     <img src="media/md_preview.png" alt="Default" width="90%">
 </div>
 
-- **Markdown All in One** extension: adds preview and syntax features.
-- **MarkdownLint**: helps maintain consistent formatting.
+- **Markdown All in One** extension: Adds preview and syntax features.
+- **MarkdownLint**: Helps maintain consistent formatting.
 
 ## Copilot
 
-It's a AI chatbot inside VS Code that uses the power of popular models (e.g. ChatGPT, Claude, and Gemini). As a chatbot you can ask him about coding, but the best part is that it can helpyou edit/explain/debug the code inside VS Code.
+It's an AI chatbot inside VS Code that uses the power of popular models (e.g., ChatGPT, Claude, and Gemini). As a chatbot, you can ask it about coding, but the best part is that it can help you edit, explain, and debug code inside VS Code.
 
-Best part about this, is that with a `.edu` email we have free access to GitHub Copilot.
+The best part is that with a `.edu` email, you have free access to GitHub Copilot.
 
 To activate it:
 
 1. You need a **GitHub account**.
-    - Create an account if you don't have one @ [https://github.com/](https://github.com/)
+    - Create an account if you don't have one at [https://github.com/](https://github.com/).
 
-    > **Recomendation:** create an account with your personal email. After that you can connect your <code>.edu</code> email to your personal account. That way you avoid any problems with not having access after graduation.
+    > **Recommendation:** Create an account with your personal email. After that, you can connect your `.edu` email to your personal account. That way, you avoid any problems with losing access after graduation.
 
-2. Need to have the GitHub Copilot VS Code extension installed.
+2. You need to have the GitHub Copilot VS Code extension installed.
     - Go to the Extensions tab and search for `GitHub Copilot`.
 
-To check that you have Copilot enabled you will see and icon on the top bar
+To check that you have Copilot enabled, you will see an icon on the top bar:
 
 <div align="center">
     <img src="media/copilot_enabled.png" alt="Default" width="90%">
 </div>
 
-click on it and follow the configuration steps.
+Click on it and follow the configuration steps.
 
 ### Using Copilot
 
-#### In line Chat
-The easiest way of running Copilot is with in a file and press `Ctrl+I` (Windows) and `Cmd+I` in (Mac) and a small chat window will appear on top of the line.
+#### In-line Chat
+The easiest way to run Copilot is within a file. Press `Ctrl+I` (Windows) and `Cmd+I` (Mac), and a small chat window will appear on top of the line.
 
 <div align="center">
     <img src="media/init_copilot.png" alt="Default" width="90%">
@@ -191,58 +199,58 @@ The easiest way of running Copilot is with in a file and press `Ctrl+I` (Windows
 
 Notice a couple of things:
 
-- There are 4 icons in the right side of the chat.
+- There are four icons on the right side of the chat:
 
-    1. Is a *clip* where you can add context to your querry/prompt. For instance, if you want to reference some other file in your workspace (or even your entire workspace/codebase) you can add it to improve it's output.
+    1. A *clip* where you can add context to your query/prompt. For instance, if you want to reference another file in your workspace (or even your entire workspace/codebase), you can add it to improve its output.
 
     <div align="center">
         <img src="media/copilot_context.png" alt="Default" width="90%">
     </div>
 
-    2. A microphone, where you can use voice to text.
-    3. The model you want to chose. In my own testing all of these are very good for coding, but be wary that the `o1` and `o3-mini` versions have a limit of calls per day.
+    2. A microphone, where you can use voice-to-text.
+    3. The model you want to choose. In my testing, all of these are very good for coding, but be wary that the `o1` and `o3-mini` versions have a limit of calls per day.
     4. The last one is to send the prompt to be processed.
 
-On the chatbox you can put
+In the chatbox, you can type:
 ```
-write the YOUR_PREFERED_LANGUAGE script to sum the first 100 intergers bellow
+write the YOUR_PREFERED_LANGUAGE script to sum the first 100 integers below
 ```
 
-#### Chat side bar
+
 
 Now Copilot will process the prompt and return with edits in your file:
+#### Chat Side Bar
+
+The other way is to use Copilot in a Chat. Click the Copilot icon at the top or press `Ctrl+Alt+I` (Windows) or `Cmd+Option+I` (Mac).
 
 <div align="center">
     <img src="media/copilot_chat.png" alt="Default" width="90%">
 </div>
 
-In my case I asked for an R script.
-
-The other way is to use Copilot in a Chat. Click the Copilot icon at the top or press `Ctrl+Alt+I` (Windows) or `Cmd+Option+I` (Mac).
-
-For this part you can ask Copilot to create simple scripts to sum the first 100 intergers in all the programing languages you want by doing the following:
+For this part, you can ask Copilot to create simple scripts to sum the first 100 integers in all the programming languages you want by doing the following:
 
 1. Set the context (click on the *clip*) as `Codebase`.
 2. Paste the following prompt:
     ```
-    Write separate scripts in Python, Julia, R, Stata, and MATLAB to sum the first 100 intergers and print the answers? 
-    Please name all the files as "sum_100_int" with the correct file extension for each language and save them in the routines folder
+    Write separate scripts in Python, Julia, R, Stata, and MATLAB to sum the first 100 integers and print the answers. 
+    Please name all the files as "sum_100" with the correct file extension for each language and save them in the routines folder. I don't want to create a new workspace.
     ```
-3. Now, move the cursor to one on the code snipped and select the option `Apply to routines/sum_100.XX` where `XX` depends on the programing language you selected. Save the file and you are done!
+    > If you get an answer prompting to create a new workspace, just retry the prompt.
+3. Now, move the cursor to one of the code snippets and select the option `Apply to routines/sum_100.XX` where `XX` depends on the programming language you selected. Save the file and you are done!
 
     <div align="center">
         <img src="media/apply_changes.png" alt="Default" width="90%">
     </div>
 
     <div class="callout">
-            <strong>Note:</strong> sometimes the outputs of copilot are not perfect, and so sometimes you might need to do some copy paste.
+            <strong>Note:</strong> Sometimes the outputs of Copilot are not perfect, and you might need to do some copy-pasting.
     </div>
 
-To close the chat box just right-click and select `Hide Secondary Side Bar`.
+To close the chat box, right-click and select `Hide Secondary Side Bar`.
 
-#### In line suggestions
+#### In-line Suggestions
 
-Copilot can also give you suggestions while you code. For example, it can give tyou another way to calculate the first 100 intergers in `python`. Just press `TAB` to accept the changes and new suggestiong will appear.
+Copilot can also give you suggestions while you code. For example, it can give you another way to calculate the first 100 integers in `python`. Just press `TAB` to accept the changes and new suggestions will appear.
 
 <div align="center">
         <img src="media/copilot_seg.png" alt="Default" width="90%">
@@ -256,8 +264,9 @@ Copilot can also give you suggestions while you code. For example, it can give t
 ## Running Scripts
 - Each language has an official VS Code extension for syntax highlighting, debugging, and more.  
 - **Stata or MATLAB** might be used through a combination of terminal usage or third-party extensions.
+    - For Stata, there is `statRun` but it requires some configuration beforehand. 
 
-To run a script just download the corresponding extention (which usually has the name of the language)
+To run a script, just download the corresponding extension (which usually has the name of the language).
 
 > **Note**: Different languages have different ways of running scripts and different keybinds, but usually, clicking the play button is sufficient. Behind the scenes, it executes the script in the terminal.
 
@@ -271,7 +280,7 @@ C:/Users/javie/miniforge3/python.exe "c:/Users/javie/OneDrive/Work/Talks/Coding 
 The sum of the first 100 integers is 5050
 ```
 
-Pressing `Shift-Enter` (Windows/Mac) you run the interactive shell, which calls on `python` to run interactively. The python outcome should be similar to
+Pressing `Shift-Enter` (Windows/Mac) runs the interactive shell, which calls on `python` to run interactively. The python outcome should be similar to:
 
 ```shell
 PS C:\Users\javie\OneDrive\Work\Talks\Coding Workflow> & C:/Users/javie/miniforge3/python.exe
@@ -286,18 +295,21 @@ The sum of the first 100 integers is 5050
 ```
 
 ## Jupyter Notebooks
-- Download the `Jupyter`extension from the Extensions tab.
-- Create or open `.ipynb` files directly in VS Code.
-- It should work by default and even recognize your python environment (or other programming languages installed)
+- Download the `Jupyter` extension from the Extensions tab.
+- Open the notebook `./routines/sum_100.ipynb`.
+- Go to the top right and press `Select Kernel`.
+- You will then need to choose the kernel you want to use. If you want to use the python kernel, click on `Python Environments`; if you want to use julia, press `Julia release channel`.
+    > Selecting `Python Environments` allows you to even create a new environment. Just follow the instructions.
+- Now you can run the cells and play around with it!
 
-## Web development
+## Web Development
 - Extensions for **HTML**, **CSS**, **JavaScript** (e.g., ESLint, Live Server).
-- You can edit your HMTL file and view your edits  live with the `Live Server` extention.
+- You can edit your HTML file and view your edits live with the `Live Server` extension.
 
 To test it out:
-1. Install `Live Server` extention.
-1. Open the file `webpage/index.html`
-2. Rigth click on the file `webpage/index.html` → `Open with Live Server`. A new browser window will render the `HTML` file. Everytime you save that `HTML` file you will see the changes in the webpage
+1. Install the `Live Server` extension.
+2. Open the file `webpage/index.html`.
+3. Right-click on the file `webpage/index.html` → `Open with Live Server`. A new browser window will render the `HTML` file. Every time you save that `HTML` file, you will see the changes in the webpage.
 
 <div align="center">
         <img src="media/live_edits.png" alt="Default" width="90%">
@@ -326,9 +338,9 @@ The GPU will instead:
 3 + 12 = 15
 ```
 Since text generation models like ChatGPT are essentially a bunch of matrix multiplications, it's better to deploy these models in GPUs (For a brief overview of these models I recommend
-3Blue1Borwn’s YouTube video [Large Language Models explained briefly](https://youtu.be/LPZh9BOjkQs?si=Nchg-eFObxSRqTOJ)).
+3Blue1Brown’s YouTube video [Large Language Models explained briefly](https://youtu.be/LPZh9BOjkQs?si=Nchg-eFObxSRqTOJ)).
 
-Here is a table summarizing the diferences from [AWS](https://aws.amazon.com/compare/the-difference-between-gpus-cpus/)
+Here is a table summarizing the differences from [AWS](https://aws.amazon.com/compare/the-difference-between-gpus-cpus/):
 
 | Summary of differences | CPU | GPU |
 |-------------------------------------|-----|-----|
@@ -337,19 +349,19 @@ Here is a table summarizing the diferences from [AWS](https://aws.amazon.com/com
 | **Design**                          | Fewer, more powerful cores | More cores than CPUs, but less powerful than CPU cores |
 | **Best suited for**                 | General purpose computing applications | High-performance computing applications |
 
-
-
-*For any problem, I recommended that you contact [OIT support](https://www.smu.edu/oit/services/stable). The people in charge of the HPC are incredibly helpful*.
+*For any problem, I recommend that you contact [OIT support](https://www.smu.edu/oit/services/stable). The people in charge of the HPC are incredibly helpful*.
 
 ## Host and Tunnels with VS Code
 
-To acces SMU's HPC you need to have an account with access to a ColdFront Allocation. The OIT has generated some [documentation](https://southernmethodistuniversity.github.io/hpc_docs/coldfront/quick_start.html) for how to use ColdFront and ask for storge and allocation resources.
+To access SMU's HPC, you need to have an account with access to a ColdFront Allocation. The OIT has generated some [documentation](https://southernmethodistuniversity.github.io/hpc_docs/coldfront/quick_start.html) on how to use ColdFront and request storage and allocation resources.
 
-As a student you might need to ask your Advisor or Dr. Sposi to give you an allocation.
+As a student, you might need to ask your Advisor or Dr. Sposi to give you an allocation.
+
+> You can only access the HPC while connected to the SMU network. You could do it through a VPN, but I haven't tried that yet.
 
 ## Linux System
 
-The HPC uses the Linux operating system, which you interface with with the spooky terminal.
+The HPC uses the Linux operating system, which you interface with through the terminal.
 
 Here are some basic commands:
 - `ls`: List files and directories.
@@ -360,81 +372,121 @@ Here are some basic commands:
 - `rm <file>`: Remove files.
 - `rmdir <directory>`: Remove empty directories.
 
-When using VS Code, you don't necesarily need to use the terminal as you can drag/copy/move files in the explorer as in your own computer. However, what it does is to use those terminal commands in the background.
+When using VS Code, you don't necessarily need to use the terminal as you can drag/copy/move files in the explorer as on your own computer. However, it uses those terminal commands in the background.
 
 ## Connecting via SSH to M3
 
 1. Install the **Remote - SSH** extension.
-2. Use the “Remote Explorer” panel to add SSH hosts.
-3. 
-4. 
-5. 
-6. 
-(ADD THE PROCESS WITH PICTURES)
+2. Access the **Remote** by clicking on the icon in the activity panel or click on the bottom-left corner.
+    <div align="center">
+            <img src="media/remote_start.png" alt="Default" width="90%">
+    </div>
+3. Select `Connect to Host...` → `Add New SSH Host...` and type:
+    ```
+    ssh YOUR_SMU_ACCOUNT@m3.smu.edu
+    ```
 
-> Instructions on how to connect to the Superpod are at the end of the document. The process is similar with the additional step to ask for the GPU resources using your ColdFront allocation.
+    > Note that if you want to connect to Superpod, you need to replace `m3` with `superpod`.
 
+4. Select the first config suggested. This saves some data to authorize the connection.
+5. Now, press the bottom-left corner again. Select `Connect to Host...` →  `m3.smu.edu`.
+6. A new window will open. Select `Linux` (this is the operating system of the HPC).
+    <div align="center">
+        <img src="media/remote_set_up.png" alt="Default" width="90%">
+    </div>
+7. Enter your password for your SMU account.
+    > If nothing is showing, you can click on **details** at the bottom right to pull up the terminal. However, it's recommended that you only input things at the top.
+    > If it keeps asking you for your password, restart the connection.
+8. The next prompt should be to select your DUO device to authorize the user.
+    > Sometimes this option doesn't show up, so click on **details** in the bottom right.
+        <div align="center">
+            <img src="media/details_zoom.png" alt="Default" width="90%">
+        </div>
+    > It also happens that the prompt will say password, but it's actually the DUO service. To make sure, click on the **details**.
+        <div align="center">
+            <img src="media/prompt.png" alt="Default" width="90%">
+        </div>
+9. Once inside, press on the **File Explorer** and click `Open Folder`.
+    <div align="center">
+        <img src="media/remote_in_open.png" alt="Default" width="90%">
+    </div>
+10. Another command bar will show, just click `OK` for now.
+    <div align="center">
+        <img src="media/remote_folder_find.png" alt="Default" width="90%">
+    </div>
+11. Log in again with steps 7-8.
+12. Now you are in your HPC work directory.
+    > Usually, what I do is create a symbolic link to my ColdFront storage allocation in the work folder on the M3 and Superpod. That way, I don't run into storage issues.
 
-## Run scripts
-The following scripts will work with no need to ask for resources or an allocation from M3. However, if you want to ask for more resources (e.g. use 2 GPU or several CPU cores or nodes) please refer to the [Asking more system resources in the HPC](#using-more-system-resources-in-the-hpc).
+Notice that you need to reconfigure VS Code, since it's installed on another machine.
 
-1. Upload the `template_folder/` by draging the folder and droping it into the explorer in the left side.
-2. Go to the `template_folder/`directory
+## Run Scripts
+The following scripts will work without needing to request resources or an allocation from M3. However, if you want to request more resources (e.g., use 2 GPUs or several CPU cores or nodes), please refer to the [Requesting More System Resources in the HPC](#requesting-more-system-resources-in-the-hpc) section.
+
+1. Upload the `template_folder/` by dragging the folder and dropping it into the explorer on the left side.
+2. Go to the terminal, and you will see a lot of info on the connection to the HPC. Now press the `+` button to create a new terminal.
+    <div align="center">
+        <img src="media/create_new_terminal.png" alt="Default" width="90%">
+    </div>
+2. Go to the `template_folder/` directory:
     ```shell
     cd ~/template_folder/routines/
     ```
-3. To run each file, run the following `run_sums.bash` script
+3. To run each file, run the following `run_sums.bash` script:
     ```shell
     bash run_sums.bash 
     ```
-    > Make sure that each script is called `sum_100.XX` where `XX` is the language extension. An example on how to run batch codes in the HPC is found in `./usefull_codes/test_sbatch_code.bash` and you can see the `run_sums.bash` to see how to call different scripts. Be sure to load the corresponding modules.
+    > Make sure that each script is called `sum_100.XX` where `XX` is the language extension. An example of how to run batch codes in the HPC is found in `./useful_codes/test_sbatch_code.bash`, and you can see the `run_sums.bash` to see how to call different scripts. Be sure to load the corresponding modules.
 
 ## Connect to your Jupyter Notebook in the HPC
 
-1. Load the necesary modules:
+If you already have a python environment ready, you can skip steps 1-4 and just activate the environment before starting step 5.
+
+1. Load the necessary modules:
     ```shell
     module purge        # just to make sure no other modules are loaded
     module load conda   # load the python pkg manager
     module list         # to check python was loaded
     ```
-    > To run other languages you just need to load them using the `module load MODULE` command. You can see the available modules using the `module avail list`. 
+    > To run other languages, you just need to load them using the `module load MODULE` command. You can see the available modules using the `module avail list`. 
 2. Create a Python virtual environment:  
    ```shell
    python -m venv test_env
    ```
-   > It's recommended that you use virtual environment for each project when using python.
+
+   > It's recommended that you use a virtual environment for each project when using python.
+
 3. Activate the virtual environment:
    ```shell
-   source test_env/bin/activate   # For Linux or macOS
-   test_env\Scripts\activate      # For Windows
+   source test_env/bin/activate 
    ```
 4. Install Jupyter:  
    ```shell
-   pip install jupyter
+   pip install jupyter ipykernel
    ```
-5. Create a new `test_notebook.ipynb` or open `sum_100.ipynb`
-6. At the top, press `Select Kernel` → `~/COLDFRONT_USER/test_env` in the list
-
-If you have problem you might need to create the jupyter server on the terminal and connect the notebook.
-
-1. Start Jupyter on the HPC with a tunnel:
+5. Start Jupyter on the HPC with a tunnel:
    ```shell
    jupyter lab --ip=0.0.0.0 --no-browser
    ```
-2. Copy the server link into the kernel
-(DO THIS WITH PICTURES)
-3. Select the `Kernel` at the top of the jupyter notebook
-4. click existing server
-5. paste the link in the terminal
-6. select the correct kernel
+6. Copy the link in the Jupyter server as seen below:
+    <div align="center">
+        <img src="media/jupyter_connect.png" alt="Default" width="90%">
+    </div>
+5. Create a new `test_notebook.ipynb` or open `sum_100.ipynb`.
+6. At the top, press `Select Kernel` → `Existing Jupyter Server...`, and paste the link and press enter.
+    > If one link does not work, try to use the other link.
+7. Select the `Python 3 (ipykernel)`.
+8. Everything should work now!
 
-## Using more system resources in the HPC
+> To shut down the server, just press `Ctrl+C` and confirm with `y`.
 
-If you need more resources from the HPC, you will need to use your ColdFront allocation. To ask for more resources I have two `bash` scripts: (i) `usefull_codes/interactive_m3_resources.bash` and (ii) `interactive_superpod_resources.bash`. 
+## Requesting More System Resources in the HPC
 
-These scripts will ask some information about how many CPU, GPU, memory, and time you need to run an interactive job.
+If you need more resources from the HPC, you will need to use your ColdFront allocation. To request more resources, I have two `bash` scripts: (i) `useful_codes/interactive_m3_resources.bash` and (ii) `interactive_superpod_resources.bash`. 
 
-**BEFORE** runing any of the scripts you need to change the YOUR_ALLOCATION within the scripts with the ColdFront allocation. See the [documentation](https://southernmethodistuniversity.github.io/hpc_docs/coldfront/qs_student.html) to find your allocation name.
+These scripts will ask for some information about how many CPU, GPU, memory, and time you need to run an interactive job.
+
+**BEFORE** running any of the scripts, you need to change the YOUR_ALLOCATION within the scripts with the ColdFront allocation. See the [documentation](https://southernmethodistuniversity.github.io/hpc_docs/coldfront/qs_student.html) to find your allocation name.
 ```bash
 ...
 # Generate the srun command
@@ -442,10 +494,6 @@ command="srun -A YOUR_ALLOCATION -p${partition}  -N${cpu_count} -n${core_count} 
 ...
 ```
 
+### Calling a Job with `sbatch`
 
-
-### Interactive job: example jupyter notebook
-
-### Calling a job with `sbatch`
-
-The code `usefull_codes/test_sbatch_code.bash` is an example on how you can send jobs to the HPC that do not require interaction. It works as a sequence of terminal commands and starts with the computing resources you need as well as other information. To learn more about sending jobs please refer to the [documentation](https://southernmethodistuniversity.github.io/hpc_docs/tutorials/slurm/best_practices.html).
+The code `useful_codes/test_sbatch_code.bash` is an example of how you can send jobs to the HPC that do not require interaction. It works as a sequence of terminal commands and starts with the computing resources you need as well as other information. To learn more about sending jobs, please refer to the [documentation](https://southernmethodistuniversity.github.io/hpc_docs/tutorials/slurm/best_practices.html).

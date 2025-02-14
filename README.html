@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="my-coding-workflow">My Coding Workflow</h1>
+<p>Javier Gonzalez - 2/13/2025</p>
+<h1 id="why-vs-code">Why VS Code?</h1>
+<ul>
+<li>
+<p><strong>Single program</strong> for all your coding needs:</p>
+<ul>
+<li>Run Julia, Python, and R scripts in one program.</li>
+<li>Edit and run Jupyter notebooks.</li>
+<li>Connect to HPC resources or servers using remote access.</li>
+<li>Use it to render and edit your LaTeX.</li>
+</ul>
+</li>
+<li>
+<p><strong>Extensions</strong> let you expand its functionality (debugging, languages, linting).</p>
+</li>
+<li>
+<p><strong>GitHub Copilot</strong>: Text generation chat bot without the need to open your browser!</p>
+<ul>
+<li>It can even read your code and edit it inside the file.</li>
+</ul>
+</li>
+<li>
+<p><strong>Customization</strong>: Customize its appearance and the tools you use for coding.</p>
+<ul>
+<li>This <a href="https://www.youtube.com/watch?v=9_I0bySQoCs">YouTube video</a> shows how to completely redesign the look of VS Code.</li>
+</ul>
+  <table>
+      <tr>
+          <td align="center">
+              <img src="media/default_vscode.png" alt="Default">
+              <figcaption>Default</figcaption>
+          </td>
+          <td align="center">
+              <img src="media/custom_vscode.png" alt="Customized">
+              <figcaption>Customized</figcaption>
+          </tr>
+  </table>
+</li>
+</ul>
+<h1 id="download-vs-code">Download VS Code</h1>
+<h2 id="instructions-for-windows">Instructions for Windows</h2>
+<ol>
+<li>Go to <a href="https://code.visualstudio.com/download">Visual Studio Code Downloads</a>.</li>
+<li>Select the <strong>Windows</strong> download.</li>
+<li>Follow the installer prompts.</li>
+<li>Launch VS Code and customize it to your preferences.</li>
+</ol>
+<h2 id="instructions-for-macos">Instructions for MacOS</h2>
+<ol>
+<li>Go to <a href="https://code.visualstudio.com/download">Visual Studio Code Downloads</a>.</li>
+<li>Select the <strong>macOS</strong> download.</li>
+<li>Drag and drop the app into your <strong>Applications</strong> folder.</li>
+<li>Open VS Code. Confirm that macOS security settings allow opening apps from outside the App Store.</li>
+</ol>
+<h1 id="download-the-github-repository">Download the GitHub Repository</h1>
+<ol>
+<li>
+<p>Go to <a href="https://github.com/jjgecon/vs_code_workflow">https://github.com/jjgecon/vs_code_workflow</a>.</p>
+</li>
+<li>
+<p>Select <code>Code</code> → <code>Download ZIP</code>.</p>
+ <div align="center">
+     <img src="media/github_download.png" alt="Default" width="90%">
+ </div>
+<blockquote>
+<p>Alternatively, you can clone the repository using the terminal or <a href="https://desktop.github.com/download/">GitHub Desktop</a>.</p>
+</blockquote>
+</li>
+<li>
+<p>Unzip the files to your desired location.</p>
+</li>
+</ol>
+<h1 id="open-the-templatefolder-folder">Open the <code>template_folder</code> Folder</h1>
+<p>There are two ways to open a folder with VS Code:</p>
+<ol>
+<li>Select the <code>Open Folder</code> option on the <em>Welcome</em> page and locate the <code>./vs_code_workflow-main/template_folder</code> folder, then press open.</li>
+</ol>
+<div align="center">
+    <img src="media/open_welcome.png" alt="Default" width="90%">
+</div>
+<ol start="2">
+<li>Go to the menu bar at the top and select <code>File</code> → <code>Open Folder</code> and find the <code>template_folder</code> folder.</li>
+</ol>
+<h1 id="layout-explanation">Layout Explanation</h1>
+<p>This is the default layout of VS Code upon installation:</p>
+<div align="center">
+    <img src="media/default_layput.png" alt="Default" width="90%">
+</div>
+<h2 id="side-panel">Side Panel</h2>
+<p>The side panel in Visual Studio Code is typically located on the left side of the window. It contains several important views and tools that help you navigate and manage your project:</p>
+<ul>
+<li><strong>Explorer</strong>: Displays the files and folders in your workspace. Open, create, delete, and manage files from here.</li>
+<li><strong>Source Control</strong>: Integrates with version control systems like Git. View changes, commit, push, pull, and manage branches.</li>
+<li><strong>Search</strong>: Allows you to search for text within your project files.</li>
+<li><strong>Extensions</strong>: Browse and install extensions to add new features to VS Code.</li>
+<li><strong>Debug</strong>: Provides tools to run and debug your code.</li>
+</ul>
+<h2 id="terminal">Terminal</h2>
+<p>The integrated terminal in Visual Studio Code allows you to run command-line tasks directly within the editor. Open the terminal by clicking the terminal icon or using the keyboard shortcut <code>Ctrl+</code> (Windows) or <code>Cmd+J</code> (Mac). The terminal supports multiple instances, so you can run different commands in separate terminals simultaneously.</p>
+<h2 id="editor">Editor</h2>
+<p>The text editor is the main area where you write and edit your code. It supports syntax highlighting, code completion, and other features to help you write code efficiently. Open multiple files in tabs and split the editor to view and edit files side by side.</p>
+<h2 id="command-palette">Command Palette</h2>
+<p>Press F1 or <code>Ctrl+Shift+P</code> (Windows) or <code>Cmd+Shift+P</code> (Mac) to quickly access commands and settings. <a href="https://docs.github.com/en/codespaces/reference/using-the-vs-code-command-palette-in-codespaces">This post</a> explains some of its uses.</p>
+<p>You should see the following command bar:</p>
+<div align="center">
+    <img src="media/command_pallete.png" alt="Default" width="90%">
+</div>
+<h2 id="my-customizations">My Customizations</h2>
+<ul>
+<li>
+<p><strong>Move Terminal to the Right</strong>: Right-click on the terminal and select the option <code>Panel Position</code> → <code>Right</code>.</p>
+</li>
+<li>
+<p><strong>Move the Activity Bar to the Top of the Side Panel</strong>: Right-click on the activity bar and select the option <code>Activity Bar Position</code> → <code>Top</code>.</p>
+  <table>
+      <tr>
+          <td align="center">
+              <img src="media/terminal_pos.png" alt="Default">
+              <figcaption>Terminal</figcaption>
+          </td>
+          <td align="center">
+              <img src="media/move_act_bar.png" alt="Customized">
+              <figcaption>Activity Bar</figcaption>
+          </tr>
+  </table>
+</li>
+<li>
+<p><strong>Hide Unused Panels</strong>: When I'm not using the side panel or the terminal, I like to hide them.</p>
+<ul>
+<li>Right-click the panel icon or press <code>Ctrl+B</code> (Windows) or <code>Cmd+B</code> (Mac) to hide or show the left side panel.</li>
+<li>Right-click the terminal icon or press <code>Ctrl+J</code> (Windows) or <code>Cmd+J</code> (Mac) to hide or show the terminal panel.</li>
+</ul>
+</li>
+<li>
+<p><strong>Enable Auto-save</strong>:</p>
+<ol>
+<li>Open the Command Palette with <code>Ctrl+Shift+P</code> (Windows) or <code>Cmd+Shift+P</code> (Mac).</li>
+<li>Type <code>Preferences: Open Settings (UI)</code> and press Enter.</li>
+<li>In the search bar, type <code>Auto Save</code>.</li>
+<li>Select the <code>Files: Auto Save</code> dropdown and choose <code>afterDelay</code>.</li>
+<li>Optionally, adjust the <code>Files: Auto Save Delay</code> to your preference (e.g., for every 5 minutes, set it to <code>300000</code> milliseconds).</li>
+</ol>
+</li>
+</ul>
+<h1 id="extensions">Extensions</h1>
+<p>A Visual Studio Code (VS Code) extension is a package that adds new features or functionality to the VS Code editor. Extensions enhance your development experience by providing tools, themes, debuggers, and more.</p>
+<p>For more information on VS Code extensions, visit the <a href="https://marketplace.visualstudio.com/vscode">Visual Studio Code Marketplace</a>.</p>
+<p>To access the extensions view, click on the four squares in the Activity Bar:</p>
+<div align="center">
+    <img src="media/extensions.png" alt="Default" width="90%">
+</div>
+<h2 id="themes">Themes</h2>
+<ol>
+<li>Search for “Themes” (e.g., “One Dark Pro”, “Solarized”).</li>
+<li>Install and select a theme via the Command Palette → “Color Theme”.</li>
+</ol>
+<p>My current VS Code setup:</p>
+<div align="center">
+    <img src="media/my_vscode.png" alt="Default" width="90%">
+</div>
+<p>I'm currently using <code>GitHub Dark (Default)</code> from the <a href="https://marketplace.visualstudio.com/items?itemName=GitHub.github-vscode-theme">GitHub Theme</a>. I also really like the <a href="https://marketplace.visualstudio.com/items?itemName=lucafalasco.matchalk">Matchalk</a> green theme.</p>
+<h1 id="lets-use-vs-code">Let's Use VS Code</h1>
+<h2 id="markdown">Markdown</h2>
+<p>Let's start with Markdown, a simple language for writing text. (This file was written in Markdown.)</p>
+<p>Open the file <code>my_explanation.md</code> using the file explorer. Alternatively, search for files with the keybind <code>Ctrl+P</code> (Windows) or <code>Cmd+P</code> (Mac).</p>
+<p>Preview your Markdown by using the <code>Preview</code> button. Alternatively, use the command palette (<code>Ctrl+Shift+P</code> for Windows or <code>Cmd+Shift+P</code> Mac) and search for <code>Markdown: Open Preview to the Side</code>.</p>
+<div align="center">
+    <img src="media/md_preview.png" alt="Default" width="90%">
+</div>
+<ul>
+<li><strong>Markdown All in One</strong> extension: Adds preview and syntax features.</li>
+<li><strong>MarkdownLint</strong>: Helps maintain consistent formatting.</li>
+</ul>
+<h2 id="copilot">Copilot</h2>
+<p>It's an AI chatbot inside VS Code that uses the power of popular models (e.g., ChatGPT, Claude, and Gemini). As a chatbot, you can ask it about coding, but the best part is that it can help you edit, explain, and debug code inside VS Code.</p>
+<p>The best part is that with a <code>.edu</code> email, you have free access to GitHub Copilot.</p>
+<p>To activate it:</p>
+<ol>
+<li>
+<p>You need a <strong>GitHub account</strong>.</p>
+<ul>
+<li>Create an account if you don't have one at <a href="https://github.com/">https://github.com/</a>.</li>
+</ul>
+<blockquote>
+<p><strong>Recommendation:</strong> Create an account with your personal email. After that, you can connect your <code>.edu</code> email to your personal account. That way, you avoid any problems with losing access after graduation.</p>
+</blockquote>
+</li>
+<li>
+<p>You need to have the GitHub Copilot VS Code extension installed.</p>
+<ul>
+<li>Go to the Extensions tab and search for <code>GitHub Copilot</code>.</li>
+</ul>
+</li>
+</ol>
+<p>To check that you have Copilot enabled, you will see an icon on the top bar:</p>
+<div align="center">
+    <img src="media/copilot_enabled.png" alt="Default" width="90%">
+</div>
+<p>Click on it and follow the configuration steps.</p>
+<h3 id="using-copilot">Using Copilot</h3>
+<h4 id="in-line-chat">In-line Chat</h4>
+<p>The easiest way to run Copilot is within a file. Press <code>Ctrl+I</code> (Windows) and <code>Cmd+I</code> (Mac), and a small chat window will appear on top of the line.</p>
+<div align="center">
+    <img src="media/init_copilot.png" alt="Default" width="90%">
+</div>
+<p>Notice a couple of things:</p>
+<ul>
+<li>
+<p>There are four icons on the right side of the chat:</p>
+<ol>
+<li>A <em>clip</em> where you can add context to your query/prompt. For instance, if you want to reference another file in your workspace (or even your entire workspace/codebase), you can add it to improve its output.</li>
+</ol>
+  <div align="center">
+      <img src="media/copilot_context.png" alt="Default" width="90%">
+  </div>
+<ol start="2">
+<li>A microphone, where you can use voice-to-text.</li>
+<li>The model you want to choose. In my testing, all of these are very good for coding, but be wary that the <code>o1</code> and <code>o3-mini</code> versions have a limit of calls per day.</li>
+<li>The last one is to send the prompt to be processed.</li>
+</ol>
+</li>
+</ul>
+<p>In the chatbox, you can type:</p>
+<pre class="hljs"><code><div>write the YOUR_PREFERED_LANGUAGE script to sum the first 100 integers below
+</div></code></pre>
+<p>Now Copilot will process the prompt and return with edits in your file:</p>
+<h4 id="chat-side-bar">Chat Side Bar</h4>
+<p>The other way is to use Copilot in a Chat. Click the Copilot icon at the top or press <code>Ctrl+Alt+I</code> (Windows) or <code>Cmd+Option+I</code> (Mac).</p>
+<div align="center">
+    <img src="media/copilot_chat.png" alt="Default" width="90%">
+</div>
+<p>For this part, you can ask Copilot to create simple scripts to sum the first 100 integers in all the programming languages you want by doing the following:</p>
+<ol>
+<li>
+<p>Set the context (click on the <em>clip</em>) as <code>Codebase</code>.</p>
+</li>
+<li>
+<p>Paste the following prompt:</p>
+<pre class="hljs"><code><div>Write separate scripts in Python, Julia, R, Stata, and MATLAB to sum the first 100 integers and print the answers. 
+Please name all the files as &quot;sum_100&quot; with the correct file extension for each language and save them in the routines folder. I don't want to create a new workspace.
+</div></code></pre>
+<blockquote>
+<p>If you get an answer prompting to create a new workspace, just retry the prompt.</p>
+</blockquote>
+</li>
+<li>
+<p>Now, move the cursor to one of the code snippets and select the option <code>Apply to routines/sum_100.XX</code> where <code>XX</code> depends on the programming language you selected. Save the file and you are done!</p>
+ <div align="center">
+     <img src="media/apply_changes.png" alt="Default" width="90%">
+ </div>
+ <div class="callout">
+         <strong>Note:</strong> Sometimes the outputs of Copilot are not perfect, and you might need to do some copy-pasting.
+ </div>
+</li>
+</ol>
+<p>To close the chat box, right-click and select <code>Hide Secondary Side Bar</code>.</p>
+<h4 id="in-line-suggestions">In-line Suggestions</h4>
+<p>Copilot can also give you suggestions while you code. For example, it can give you another way to calculate the first 100 integers in <code>python</code>. Just press <code>TAB</code> to accept the changes and new suggestions will appear.</p>
+<div align="center">
+        <img src="media/copilot_seg.png" alt="Default" width="90%">
+</div>
+<div class="callout">
+        Copilot has a lot of features coming up. This <a href="https://www.youtube.com/watch?v=C95drFKy4ss&t=306s">video</a> highlights agents. Feel free to browse through <a href="https://github.com/features/copilot">GitHub Copilot Features</a> for all its features.
+</div>
+<h2 id="running-scripts">Running Scripts</h2>
+<ul>
+<li>Each language has an official VS Code extension for syntax highlighting, debugging, and more.</li>
+<li><strong>Stata or MATLAB</strong> might be used through a combination of terminal usage or third-party extensions.
+<ul>
+<li>For Stata, there is <code>statRun</code> but it requires some configuration beforehand.</li>
+</ul>
+</li>
+</ul>
+<p>To run a script, just download the corresponding extension (which usually has the name of the language).</p>
+<blockquote>
+<p><strong>Note</strong>: Different languages have different ways of running scripts and different keybinds, but usually, clicking the play button is sufficient. Behind the scenes, it executes the script in the terminal.</p>
+</blockquote>
+<div align="center">
+        <img src="media/run_scripts.png" alt="Default" width="90%">
+</div>
+<p>The output will look something like this:</p>
+<pre class="hljs"><code><div>C:/Users/javie/miniforge3/python.exe "c:/Users/javie/OneDrive/Work/Talks/Coding Workflow/template_folder/routines/sum_100.py"
+The sum of the first 100 integers is 5050
+</div></code></pre>
+<p>Pressing <code>Shift-Enter</code> (Windows/Mac) runs the interactive shell, which calls on <code>python</code> to run interactively. The python outcome should be similar to:</p>
+<pre class="hljs"><code><div>PS C:\Users\javie\OneDrive\Work\Talks\Coding Workflow&gt; &amp; C:/Users/javie/miniforge3/python.exe
+Python 3.12.6 | packaged by conda-forge | (main, Sep 22 2024, 14:01:26) [MSC v.1941 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+<span class="hljs-meta">&gt;</span><span class="bash">&gt;&gt; def sum_to_100():</span>
+...     return sum(range(1, 101))
+... 
+<span class="hljs-meta">&gt;</span><span class="bash">&gt;&gt; <span class="hljs-built_in">print</span>(f<span class="hljs-string">"The sum of the first 100 integers is {sum_to_100()}"</span>)</span>
+The sum of the first 100 integers is 5050
+<span class="hljs-meta">&gt;</span><span class="bash">&gt;&gt; </span>
+</div></code></pre>
+<h2 id="jupyter-notebooks">Jupyter Notebooks</h2>
+<ul>
+<li>Download the <code>Jupyter</code> extension from the Extensions tab.</li>
+<li>Open the notebook <code>./routines/sum_100.ipynb</code>.</li>
+<li>Go to the top right and press <code>Select Kernel</code>.</li>
+<li>You will then need to choose the kernel you want to use. If you want to use the python kernel, click on <code>Python Environments</code>; if you want to use julia, press <code>Julia release channel</code>.
+<blockquote>
+<p>Selecting <code>Python Environments</code> allows you to even create a new environment. Just follow the instructions.</p>
+</blockquote>
+</li>
+<li>Now you can run the cells and play around with it!</li>
+</ul>
+<h2 id="web-development">Web Development</h2>
+<ul>
+<li>Extensions for <strong>HTML</strong>, <strong>CSS</strong>, <strong>JavaScript</strong> (e.g., ESLint, Live Server).</li>
+<li>You can edit your HTML file and view your edits live with the <code>Live Server</code> extension.</li>
+</ul>
+<p>To test it out:</p>
+<ol>
+<li>Install the <code>Live Server</code> extension.</li>
+<li>Open the file <code>webpage/index.html</code>.</li>
+<li>Right-click on the file <code>webpage/index.html</code> → <code>Open with Live Server</code>. A new browser window will render the <code>HTML</code> file. Every time you save that <code>HTML</code> file, you will see the changes in the webpage.</li>
+</ol>
+<div align="center">
+        <img src="media/live_edits.png" alt="Default" width="90%">
+</div>
+<h1 id="hpc">HPC</h1>
+<p>SMU has <a href="https://www.smu.edu/oit/research/hpc">High Power Computing (HPC)</a> available for students. The <a href="https://www.smu.edu/oit/services/m3">M3</a> supercomputer focuses on CPU power, while the <a href="https://www.smu.edu/oit/services/superpod">Superpod</a> uses GPU power.</p>
+<p>One way to understand the difference between them is that a CPU node is designed to focus on one task, while GPUs are designed to focus on multiple tasks at a time.</p>
+<p>As an example, if we want to sum up from 1 to 5, the CPU (without any parallelization) will go:</p>
+<pre class="hljs"><code><div>0 + 1  = 1
+1 + 2  = 3
+3 + 3  = 6
+6 + 4  = 10
+10 + 5 = 15
+</div></code></pre>
+<p>The GPU will instead:</p>
+<pre class="hljs"><code><div>0 + 1 + 2 = 3
+3 + 4 + 5 = 12
+3 + 12 = 15
+</div></code></pre>
+<p>Since text generation models like ChatGPT are essentially a bunch of matrix multiplications, it's better to deploy these models in GPUs (For a brief overview of these models I recommend
+3Blue1Brown’s YouTube video <a href="https://youtu.be/LPZh9BOjkQs?si=Nchg-eFObxSRqTOJ">Large Language Models explained briefly</a>).</p>
+<p>Here is a table summarizing the differences from <a href="https://aws.amazon.com/compare/the-difference-between-gpus-cpus/">AWS</a>:</p>
+<table>
+<thead>
+<tr>
+<th>Summary of differences</th>
+<th>CPU</th>
+<th>GPU</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Function</strong></td>
+<td>Generalized component that handles main processing functions of a server</td>
+<td>Specialized component that excels at parallel computing</td>
+</tr>
+<tr>
+<td><strong>Processing</strong></td>
+<td>Designed for serial instruction processing</td>
+<td>Designed for parallel instruction processing</td>
+</tr>
+<tr>
+<td><strong>Design</strong></td>
+<td>Fewer, more powerful cores</td>
+<td>More cores than CPUs, but less powerful than CPU cores</td>
+</tr>
+<tr>
+<td><strong>Best suited for</strong></td>
+<td>General purpose computing applications</td>
+<td>High-performance computing applications</td>
+</tr>
+</tbody>
+</table>
+<p><em>For any problem, I recommend that you contact <a href="https://www.smu.edu/oit/services/stable">OIT support</a>. The people in charge of the HPC are incredibly helpful</em>.</p>
+<h2 id="host-and-tunnels-with-vs-code">Host and Tunnels with VS Code</h2>
+<p>To access SMU's HPC, you need to have an account with access to a ColdFront Allocation. The OIT has generated some <a href="https://southernmethodistuniversity.github.io/hpc_docs/coldfront/quick_start.html">documentation</a> on how to use ColdFront and request storage and allocation resources.</p>
+<p>As a student, you might need to ask your Advisor or Dr. Sposi to give you an allocation.</p>
+<blockquote>
+<p>You can only access the HPC while connected to the SMU network. You could do it through a VPN, but I haven't tried that yet.</p>
+</blockquote>
+<h2 id="linux-system">Linux System</h2>
+<p>The HPC uses the Linux operating system, which you interface with through the terminal.</p>
+<p>Here are some basic commands:</p>
+<ul>
+<li><code>ls</code>: List files and directories.</li>
+<li><code>cd &lt;directory&gt;</code>: Change directory.</li>
+<li><code>pwd</code>: Print working directory.</li>
+<li><code>cp &lt;source&gt; &lt;destination&gt;</code>: Copy files or directories.</li>
+<li><code>mv &lt;source&gt; &lt;destination&gt;</code>: Move or rename files or directories.</li>
+<li><code>rm &lt;file&gt;</code>: Remove files.</li>
+<li><code>rmdir &lt;directory&gt;</code>: Remove empty directories.</li>
+</ul>
+<p>When using VS Code, you don't necessarily need to use the terminal as you can drag/copy/move files in the explorer as on your own computer. However, it uses those terminal commands in the background.</p>
+<h2 id="connecting-via-ssh-to-m3">Connecting via SSH to M3</h2>
+<ol>
+<li>
+<p>Install the <strong>Remote - SSH</strong> extension.</p>
+</li>
+<li>
+<p>Access the <strong>Remote</strong> by clicking on the icon in the activity panel or click on the bottom-left corner.</p>
+ <div align="center">
+         <img src="media/remote_start.png" alt="Default" width="90%">
+ </div>
+</li>
+<li>
+<p>Select <code>Connect to Host...</code> → <code>Add New SSH Host...</code> and type:</p>
+<pre class="hljs"><code><div>ssh YOUR_SMU_ACCOUNT@m3.smu.edu
+</div></code></pre>
+<blockquote>
+<p>Note that if you want to connect to Superpod, you need to replace <code>m3</code> with <code>superpod</code>.</p>
+</blockquote>
+</li>
+<li>
+<p>Select the first config suggested. This saves some data to authorize the connection.</p>
+</li>
+<li>
+<p>Now, press the bottom-left corner again. Select <code>Connect to Host...</code> →  <code>m3.smu.edu</code>.</p>
+</li>
+<li>
+<p>A new window will open. Select <code>Linux</code> (this is the operating system of the HPC).</p>
+ <div align="center">
+     <img src="media/remote_set_up.png" alt="Default" width="90%">
+ </div>
+</li>
+<li>
+<p>Enter your password for your SMU account.</p>
+<blockquote>
+<p>If nothing is showing, you can click on <strong>details</strong> at the bottom right to pull up the terminal. However, it's recommended that you only input things at the top.
+If it keeps asking you for your password, restart the connection.</p>
+</blockquote>
+</li>
+<li>
+<p>The next prompt should be to select your DUO device to authorize the user.</p>
+<blockquote>
+<p>Sometimes this option doesn't show up, so click on <strong>details</strong> in the bottom right.
+<div align="center">
+<img src="media/details_zoom.png" alt="Default" width="90%">
+</div>
+It also happens that the prompt will say password, but it's actually the DUO service. To make sure, click on the <strong>details</strong>.
+<div align="center">
+<img src="media/prompt.png" alt="Default" width="90%">
+</div></p>
+</blockquote>
+</li>
+<li>
+<p>Once inside, press on the <strong>File Explorer</strong> and click <code>Open Folder</code>.</p>
+ <div align="center">
+     <img src="media/remote_in_open.png" alt="Default" width="90%">
+ </div>
+</li>
+<li>
+<p>Another command bar will show, just click <code>OK</code> for now.</p>
+<div align="center">
+    <img src="media/remote_folder_find.png" alt="Default" width="90%">
+</div>
+</li>
+<li>
+<p>Log in again with steps 7-8.</p>
+</li>
+<li>
+<p>Now you are in your HPC work directory.</p>
+<blockquote>
+<p>Usually, what I do is create a symbolic link to my ColdFront storage allocation in the work folder on the M3 and Superpod. That way, I don't run into storage issues.</p>
+</blockquote>
+</li>
+</ol>
+<p>Notice that you need to reconfigure VS Code, since it's installed on another machine.</p>
+<h2 id="run-scripts">Run Scripts</h2>
+<p>The following scripts will work without needing to request resources or an allocation from M3. However, if you want to request more resources (e.g., use 2 GPUs or several CPU cores or nodes), please refer to the <a href="#requesting-more-system-resources-in-the-hpc">Requesting More System Resources in the HPC</a> section.</p>
+<ol>
+<li>Upload the <code>template_folder/</code> by dragging the folder and dropping it into the explorer on the left side.</li>
+<li>Go to the terminal, and you will see a lot of info on the connection to the HPC. Now press the <code>+</code> button to create a new terminal. <div align="center">
+     <img src="media/create_new_terminal.png" alt="Default" width="90%">
+ </div>
+</li>
+<li>Go to the <code>template_folder/</code> directory:<pre class="hljs"><code><div>cd ~/template_folder/routines/
+</div></code></pre>
+</li>
+<li>To run each file, run the following <code>run_sums.bash</code> script:<pre class="hljs"><code><div>bash run_sums.bash 
+</div></code></pre>
+<blockquote>
+<p>Make sure that each script is called <code>sum_100.XX</code> where <code>XX</code> is the language extension. An example of how to run batch codes in the HPC is found in <code>./useful_codes/test_sbatch_code.bash</code>, and you can see the <code>run_sums.bash</code> to see how to call different scripts. Be sure to load the corresponding modules.</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="connect-to-your-jupyter-notebook-in-the-hpc">Connect to your Jupyter Notebook in the HPC</h2>
+<p>If you already have a python environment ready, you can skip steps 1-4 and just activate the environment before starting step 5.</p>
+<ol>
+<li>
+<p>Load the necessary modules:</p>
+<pre class="hljs"><code><div>module purge        # just to make sure no other modules are loaded
+module load conda   # load the python pkg manager
+module list         # to check python was loaded
+</div></code></pre>
+<blockquote>
+<p>To run other languages, you just need to load them using the <code>module load MODULE</code> command. You can see the available modules using the <code>module avail list</code>.</p>
+</blockquote>
+</li>
+<li>
+<p>Create a Python virtual environment:</p>
+<pre class="hljs"><code><div>python -m venv test_env
+</div></code></pre>
+<blockquote>
+<p>It's recommended that you use a virtual environment for each project when using python.</p>
+</blockquote>
+</li>
+<li>
+<p>Activate the virtual environment:</p>
+<pre class="hljs"><code><div>source test_env/bin/activate 
+</div></code></pre>
+</li>
+<li>
+<p>Install Jupyter:</p>
+<pre class="hljs"><code><div>pip install jupyter ipykernel
+</div></code></pre>
+</li>
+<li>
+<p>Start Jupyter on the HPC with a tunnel:</p>
+<pre class="hljs"><code><div>jupyter lab --ip=0.0.0.0 --no-browser
+</div></code></pre>
+</li>
+<li>
+<p>Copy the link in the Jupyter server as seen below:</p>
+ <div align="center">
+     <img src="media/jupyter_connect.png" alt="Default" width="90%">
+ </div>
+</li>
+<li>
+<p>Create a new <code>test_notebook.ipynb</code> or open <code>sum_100.ipynb</code>.</p>
+</li>
+<li>
+<p>At the top, press <code>Select Kernel</code> → <code>Existing Jupyter Server...</code>, and paste the link and press enter.</p>
+<blockquote>
+<p>If one link does not work, try to use the other link.</p>
+</blockquote>
+</li>
+<li>
+<p>Select the <code>Python 3 (ipykernel)</code>.</p>
+</li>
+<li>
+<p>Everything should work now!</p>
+</li>
+</ol>
+<blockquote>
+<p>To shut down the server, just press <code>Ctrl+C</code> and confirm with <code>y</code>.</p>
+</blockquote>
+<h2 id="requesting-more-system-resources-in-the-hpc">Requesting More System Resources in the HPC</h2>
+<p>If you need more resources from the HPC, you will need to use your ColdFront allocation. To request more resources, I have two <code>bash</code> scripts: (i) <code>useful_codes/interactive_m3_resources.bash</code> and (ii) <code>interactive_superpod_resources.bash</code>.</p>
+<p>These scripts will ask for some information about how many CPU, GPU, memory, and time you need to run an interactive job.</p>
+<p><strong>BEFORE</strong> running any of the scripts, you need to change the YOUR_ALLOCATION within the scripts with the ColdFront allocation. See the <a href="https://southernmethodistuniversity.github.io/hpc_docs/coldfront/qs_student.html">documentation</a> to find your allocation name.</p>
+<pre class="hljs"><code><div>...
+<span class="hljs-comment"># Generate the srun command</span>
+<span class="hljs-built_in">command</span>=<span class="hljs-string">"srun -A YOUR_ALLOCATION -p<span class="hljs-variable">${partition}</span>  -N<span class="hljs-variable">${cpu_count}</span> -n<span class="hljs-variable">${core_count}</span> --mem=<span class="hljs-variable">${memory}</span>gb --time=<span class="hljs-variable">${time}</span> --pty \$SHELL"</span>
+...
+</div></code></pre>
+<h3 id="calling-a-job-with-sbatch">Calling a Job with <code>sbatch</code></h3>
+<p>The code <code>useful_codes/test_sbatch_code.bash</code> is an example of how you can send jobs to the HPC that do not require interaction. It works as a sequence of terminal commands and starts with the computing resources you need as well as other information. To learn more about sending jobs, please refer to the <a href="https://southernmethodistuniversity.github.io/hpc_docs/tutorials/slurm/best_practices.html">documentation</a>.</p>
+
+</body>
+</html>
