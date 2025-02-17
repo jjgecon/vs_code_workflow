@@ -1,5 +1,5 @@
 # My Coding Workflow
-Javier Gonzalez - 2/13/2025
+Javier Gonzalez - 2/21/2025
 
 # Why VS Code?
 
@@ -95,6 +95,10 @@ You should see the following command bar:
     <img src="media/command_pallete.png" alt="Default" width="90%">
 </div>
 
+Another way to access any commands is to press `Ctrl+P` (Windows) or `Cmd+P` (Mac) and add a `>` at the start to do some commands.
+
+See the following [video](https://youtu.be/ifTF3ags0XI?si=3NLIhwIUW_iXQZGw) to see more key shortcuts  that can help you with your day to day code.
+
 ## My Customizations
 
 - **Move Terminal to the Right**: Right-click on the terminal and select the option `Panel Position` → `Right`.
@@ -175,7 +179,7 @@ To activate it:
 1. You need a **GitHub account**.
     - Create an account if you don't have one at [https://github.com/](https://github.com/).
 
-    > **Recommendation:** Create an account with your personal email. After that, you can connect your `.edu` email to your personal account. That way, you avoid any problems with losing access after graduation.
+    > **Recommendation:** Create an account with your personal email. After that, you apply for *GitHub Education* following these [steps](https://docs.github.com/en/education/explore-the-benefits-of-teaching-and-learning-with-github-education/github-education-for-students/apply-to-github-education-as-a-student).
 
 2. You need to have the GitHub Copilot VS Code extension installed.
     - Go to the Extensions tab and search for `GitHub Copilot`.
@@ -411,6 +415,7 @@ When using VS Code, you don't necessarily need to use the terminal as you can dr
         <img src="media/remote_in_open.png" alt="Default" width="90%">
     </div>
 10. Another command bar will show, just click `OK` for now.
+    > Here you are selecting the folder or directory you want to open. If you want to open another directory just go to it using the command bar. If you have an allocation under your advisor, you will need to navigate the HPC file system to find your advisors user name and your allocation will be within those folders.
     <div align="center">
         <img src="media/remote_folder_find.png" alt="Default" width="90%">
     </div>
