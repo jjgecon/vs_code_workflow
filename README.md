@@ -260,6 +260,8 @@ Copilot can also give you suggestions while you code. For example, it can give y
         <img src="media/copilot_seg.png" alt="Default" width="90%">
 </div>
 
+If you want to get the most out of your in-line suggestions there is a new model ChatGPT + Copilot. To activate it just go to the github button at the top and click on the arrow. Select `Configure Code Completions` → `Change Completions Model` → `GPT-4o Copilot (Preview)`. For an overview of the new features of the model please watch [this video](https://youtu.be/Oi_O6SZZWPc?si=VVQclBNW6xlmlI7X).
+
 <div class="callout">
         Copilot has a lot of features coming up. This <a href="https://www.youtube.com/watch?v=C95drFKy4ss&t=306s">video</a> highlights agents. Feel free to browse through <a href="https://github.com/features/copilot">GitHub Copilot Features</a> for all its features.
 </div>
