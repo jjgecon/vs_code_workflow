@@ -447,6 +447,8 @@ The following scripts will work without needing to request resources or an alloc
 
 ## Connect to your Jupyter Notebook in the HPC
 
+> **NOTE:** This simple method does not use `slurm nodes` or more resource intensive computational nodes. See the [Requesting More System Resources in the HPC](#requesting-more-system-resources-in-the-hpc) section for details.
+
 If you already have a python environment ready, you can skip steps 1-4 and just activate the environment before starting step 5.
 
 1. Load the necessary modules:
@@ -489,7 +491,7 @@ If you already have a python environment ready, you can skip steps 1-4 and just 
 
 ## Requesting More System Resources in the HPC
 
-If you need more resources from the HPC, you will need to use your ColdFront allocation. To request more resources, I have two `bash` scripts: (i) `useful_codes/interactive_m3_resources.bash` and (ii) `interactive_superpod_resources.bash`. 
+If you need more resources from the HPC, you will need to use your ColdFront allocation. To request more resources, I have two `bash` scripts: (i) `useful_codes/interactive_m3_resources.bash` and (ii) `useful_codes/interactive_superpod_resources.bash`. 
 
 These scripts will ask for some information about how many CPU, GPU, memory, and time you need to run an interactive job.
 
@@ -501,6 +503,38 @@ command="srun -A YOUR_ALLOCATION -p${partition}  -N${cpu_count} -n${core_count} 
 ...
 ```
 
-### Calling a Job with `sbatch`
+### Running a Job with `sbatch`
 
 The code `useful_codes/test_sbatch_code.bash` is an example of how you can send jobs to the HPC that do not require interaction. It works as a sequence of terminal commands and starts with the computing resources you need as well as other information. To learn more about sending jobs, please refer to the [documentation](https://southernmethodistuniversity.github.io/hpc_docs/tutorials/slurm/best_practices.html).
+
+### Running Jupyter Notebook
+
+> **NOTE:** with this method if you close the window you will lose conection and computation. There are alternatives to connect to the working node where a disconection does not interrupt the notebook. For this type of more complex setup see [Connect to a node running Jupyter Notebook](#connect-to-a-node-running-jupyter-notebook).
+
+1. Connect to the desired directory in HPC using the **Remote SSH**
+2. Run either my interactive script where `PATH_TO` is where you have stored the scripts. I usually have them in a folder called `useful_codes`.
+    ```bash
+    bash PATH_TO/interactive_m3_resources.bash  # For M3
+
+    bash PATH_TO/interactive_superpof_resources.bash  # For Superpod
+    ```
+    or just type into the terminal
+    ```shell
+    srun -A YOUR_ALLOCATION -p standard-s  -N1 -n8 --mem=128gb --time=2:00:00 --pty \$SHELL
+    ```
+3. Once you have your computing node assigned, you can now load the modules and activate the jupyter server
+    ```shell
+    module purge        # just to make sure no other modules are loaded
+    module load conda   # load the python pkg manager
+    module list   
+
+    # Activate python environment
+    source test_env/bin/activate 
+
+    # Run jupyter server
+    jupyter lab --ip=0.0.0.0 --no-browser
+    ```
+4. Connect your notebook to the specified server following the steps on [Connect to your Jupyter Notebook in the HPC](#connect-to-your-jupyter-notebook-in-the-hpc)
+    
+### Connect to a node running Jupyter Notebook 
+WORK in progress
