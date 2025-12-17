@@ -306,6 +306,7 @@ The sum of the first 100 integers is 5050
 - Go to the top right and press `Select Kernel`.
 - You will then need to choose the kernel you want to use. If you want to use the python kernel, click on `Python Environments`; if you want to use julia, press `Julia release channel`.
     > Selecting `Python Environments` allows you to even create a new environment. Just follow the instructions.
+    > If you have a virtual env (e.g. the one created by `uv`) you can select it by adding it to the python interpreter, and then selecting the kernel in the top right.
 - Now you can run the cells and play around with it!
 
 ## Web Development
