@@ -7,7 +7,7 @@ Javier Gonzalez - 2/21/2025
     - Run Julia, Python, and R scripts in one program.
     - Edit and run Jupyter notebooks.
     - Connect to HPC resources or servers using remote access.
-    - Use it to render and edit your LaTeX.
+    - Use it to render and edit your $\LaTeX$.
 - **Extensions** let you expand its functionality (debugging, languages, linting).
 - **GitHub Copilot**: Text generation chat bot without the need to open your browser!
     - It can even read your code and edit it inside the file.
@@ -167,6 +167,12 @@ Preview your Markdown by using the `Preview` button. Alternatively, use the comm
 
 - **Markdown All in One** extension: Adds preview and syntax features.
 - **MarkdownLint**: Helps maintain consistent formatting.
+
+## $\LaTeX{}$
+
+You can also edit your $\LaTeX{}$ files directly in VS Code. 
+
+I recommend you follow the [Jia Jia's guide](https://mathjiajia.github.io/vscode-and-latex/) to set it up.
 
 ## Copilot
 
